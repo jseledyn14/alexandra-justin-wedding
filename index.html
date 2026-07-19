@@ -98,7 +98,7 @@
     font-size: clamp(22px, 2.8vw, 34px);
     letter-spacing: 0.03em;
     color: var(--cream);
-    margin-bottom: 20px;
+    margin-bottom: 34px;
   }
 
   .big-date {
@@ -128,16 +128,14 @@
     gap: 8px;
   }
   .scroll-cue .chevron {
-    width: 10px;
-    height: 10px;
-    border-right: 1px solid rgba(243,236,225,0.65);
-    border-bottom: 1px solid rgba(243,236,225,0.65);
-    transform: rotate(45deg);
+    display: block;
+    width: 14px;
+    height: 8px;
     animation: bounce 2s ease-in-out infinite;
   }
   @keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translate(0,0); }
-    50% { transform: rotate(45deg) translate(4px, 4px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
   }
 
   /* ---------- SCROLL PAGE ---------- */
@@ -207,6 +205,7 @@
     line-height: 1;
     color: var(--primary);
     margin-bottom: 14px;
+    text-transform: lowercase;
   }
 
   .event-city {
@@ -252,7 +251,9 @@
 
     <div class="scroll-cue">
       <span>scroll</span>
-      <span class="chevron"></span>
+      <svg class="chevron" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="1,1 7,7 13,1" fill="none" stroke="rgba(243,236,225,0.65)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 
