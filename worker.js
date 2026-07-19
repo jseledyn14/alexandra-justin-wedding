@@ -13,8 +13,13 @@ function loginPage(error) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alexandra &amp; Justin</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Freebooter Script';
+    src: url('/fonts/FreebooterScript.ttf') format('truetype');
+    font-display: swap;
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
     height:100vh; display:flex; align-items:center; justify-content:center;
@@ -22,10 +27,9 @@ function loginPage(error) {
   }
   .card { text-align:center; padding:40px; max-width:360px; width:100%; }
   h1 {
-    font-family:'Cormorant Garamond', serif; font-weight:400; font-size:38px;
-    margin-bottom:8px; letter-spacing:0.01em;
+    font-family:'Freebooter Script', cursive; font-weight:400; font-size:56px;
+    margin-bottom:28px; letter-spacing:0.01em;
   }
-  p.sub { font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(243,236,225,0.6); margin-bottom:32px; }
   input[type="password"] {
     width:100%; padding:14px 16px; background:transparent; border:1px solid rgba(243,236,225,0.4);
     color:#F3ECE1; font-family:'Jost', sans-serif; font-size:14px; letter-spacing:0.05em;
@@ -44,8 +48,7 @@ function loginPage(error) {
 </head>
 <body>
   <div class="card">
-    <h1>Alexandra &amp; Justin</h1>
-    <p class="sub">Enter the password to continue</p>
+    <h1>Enter Password</h1>
     <form method="POST">
       <input type="password" name="password" placeholder="Password" autofocus required>
       <div class="error">${error ? "Incorrect password — try again." : ""}</div>
@@ -58,6 +61,14 @@ function loginPage(error) {
 
 export default {
   async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // Always allow the font files through, even before login —
+    // otherwise the password page can't load its own custom font.
+    if (url.pathname.startsWith("/fonts/")) {
+      return env.ASSETS.fetch(request);
+    }
+
     const cookieHeader = request.headers.get("Cookie") || "";
     const isAuthed = cookieHeader
       .split(";")
