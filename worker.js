@@ -16,8 +16,8 @@ function loginPage(error) {
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @font-face {
-    font-family: 'Freebooter Script';
-    src: url('/fonts/FreebooterScript.ttf') format('truetype');
+    font-family: 'Konstytucyja';
+    src: url('/fonts/Konstytucyja.otf') format('truetype');
     font-display: swap;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -27,7 +27,7 @@ function loginPage(error) {
   }
   .card { text-align:center; padding:40px; max-width:360px; width:100%; }
   h1 {
-    font-family:'Freebooter Script', cursive; font-weight:400; font-size:56px;
+    font-family:'Konstytucyja', cursive; font-weight:200; font-size:40px;
     margin-bottom:28px; letter-spacing:0.01em;
   }
   input[type="password"] {
