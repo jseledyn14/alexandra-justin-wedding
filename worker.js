@@ -48,7 +48,7 @@ function loginPage(error) {
 </head>
 <body>
   <div class="card">
-    <h1>Enter Password</h1>
+    <h1>Password Please</h1>
     <form method="POST">
       <input type="password" name="password" placeholder="Password" autofocus required>
       <div class="error">${error ? "Incorrect password — try again." : ""}</div>
