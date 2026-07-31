@@ -243,17 +243,6 @@
   @media (prefers-reduced-motion: reduce) {
     .bg, .home-content, .scroll-cue, .fade-up { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
-
-  /* ---------- RSVP EMBED (temporary — remove this block to revert) ---------- */
-  .rsvp-embed {
-    margin-top: 56px;
-    width: 100%;
-  }
-  .rsvp-embed iframe {
-    width: 100%;
-    min-width: 100%;
-    border: none;
-  }
 </style>
 </head>
 <body>
@@ -296,21 +285,6 @@
       </div>
 
       <div class="coming-soon-line fade-up">Full website and details coming soon</div>
-
-      <!-- TEMP RSVP EMBED — remove this div (and the script tag near </body>) to revert -->
-      <div class="rsvp-embed fade-up">
-        <iframe
-          data-tally-src="https://tally.so/r/dWXzoA?alignLeft=1&hideTitle=1&transparentBackground=1"
-          loading="lazy"
-          width="100%"
-          height="600"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="RSVP Form">
-        </iframe>
-      </div>
-
     </div>
   </section>
 
@@ -336,9 +310,6 @@
   });
   document.querySelector('.scroll-cue').style.cursor = 'pointer';
 </script>
-
-<!-- TEMP: Tally embed script — remove this line to revert -->
-<script src="https://tally.so/widgets/embed.js"></script>
 
 </body>
 </html>
